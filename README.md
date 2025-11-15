@@ -85,6 +85,8 @@ O algoritmo fica mais claro, fácil de entender e mais simples de manter.
 ✔ Mesmo resultado com menos operações
 
 A lógica não muda, mas o caminho até o resultado é mais eficiente.
+
+
 ✅ Complexidade dos Algoritmos
 
 A busca aleatória, tanto na versão original quanto na otimizada, possui complexidade de tempo O(n), pois precisa avaliar a função para cada um dos 
