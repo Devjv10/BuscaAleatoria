@@ -35,22 +35,10 @@ achar o mínimo
 A busca aleatória é um método simples de otimização no qual o algoritmo testa várias soluções geradas ao acaso dentro de um intervalo e escolhe aquela que produz o menor valor de uma função. É um processo sem estratégia de direcionamento: cada tentativa é independente e não utiliza informações das anteriores. Apesar de simples, é útil como baseline e para funções onde métodos tradicionais têm dificuldade.
 
 No trabalho, implementamos esse algoritmo em JavaScript para minimizar a função 
-𝑓
-(
-𝑥
-)
-=
-𝑥
-2
-f(x)=x
-2
+
+f(x)=x2
 . A busca sorteia valores aleatórios no intervalo 
-[
-−
-10
-,
-10
-]
+
 [−10,10] e avalia a função para cada um deles, registrando o menor valor encontrado.
 
 ✅ Versão Inicial
@@ -97,3 +85,31 @@ O algoritmo fica mais claro, fácil de entender e mais simples de manter.
 ✔ Mesmo resultado com menos operações
 
 A lógica não muda, mas o caminho até o resultado é mais eficiente.
+✅ Complexidade dos Algoritmos
+
+A busca aleatória, tanto na versão original quanto na otimizada, possui complexidade de tempo O(n), pois precisa avaliar a função para cada um dos 
+𝑛
+n valores sorteados.
+Não existe forma de “pular” avaliações — todo número testado precisa ter sua função calculada.
+
+Versão Original
+
+Gera um número aleatório por iteração → O(1)
+
+Calcula a função → O(1)
+
+Compara com o melhor até então → O(1)
+Repetido por n iterações:
+
+
+T(n)=n⋅O(1)=O(n)
+Versão Otimizada
+
+Array.from() gera todos os valores → O(n)
+
+reduce() percorre todos os valores para achar o mínimo → O(n)
+
+
+T(n)=O(n)+O(n)=O(n)
+
+A complexidade permanece a mesma, mas o tempo real de execução diminui porque os métodos nativos são mais eficientes.
